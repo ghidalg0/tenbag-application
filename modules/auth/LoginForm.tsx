@@ -6,7 +6,7 @@ import { z } from "zod";
 
 const formSchema = z.object({
   email: z.string().email(),
-  password: z.string().min(8),
+  password: z.string().min(6),
 });
 
 import {
@@ -62,7 +62,7 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
     const data = await res.json();
     if (data.accessToken) {
       await createAuthCookie(data.accessToken);
-      router.push("/control-center");
+      router.push("/dashboard");
       return;
     }
     toast({
