@@ -19,12 +19,20 @@ const tabs = [
     icon: <LayoutDashboardIcon size={20} />,
   },
   {
-    href: "/investments",
+    href: "/dashboard/investments",
     label: "Investments",
     icon: <ChartCandlestick size={20} />,
   },
-  { href: "/screeners", label: "Screeners", icon: <EyeIcon size={20} /> },
-  { href: "/forum", label: "Forum", icon: <MessageCircle size={20} /> },
+  {
+    href: "/dashboard/screeners",
+    label: "Screeners",
+    icon: <EyeIcon size={20} />,
+  },
+  {
+    href: "/dashboard/forum",
+    label: "Forum",
+    icon: <MessageCircle size={20} />,
+  },
 ];
 
 export const Navbar = () => {
