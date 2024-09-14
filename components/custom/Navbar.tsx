@@ -4,12 +4,27 @@ import { deleteAuthCookie } from "@/actions/cookies";
 import { Button } from "../ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import {
+  ChartCandlestick,
+  EyeIcon,
+  LayoutDashboardIcon,
+  LogOut,
+  MessageCircle,
+} from "lucide-react";
 
 const tabs = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/investments", label: "Investments" },
-  { href: "/screeners", label: "Screeners" },
-  { href: "/forum", label: "Forum" },
+  {
+    href: "/dashboard",
+    label: "Dashboard",
+    icon: <LayoutDashboardIcon size={20} />,
+  },
+  {
+    href: "/investments",
+    label: "Investments",
+    icon: <ChartCandlestick size={20} />,
+  },
+  { href: "/screeners", label: "Screeners", icon: <EyeIcon size={20} /> },
+  { href: "/forum", label: "Forum", icon: <MessageCircle size={20} /> },
 ];
 
 export const Navbar = () => {
@@ -31,19 +46,32 @@ export const Navbar = () => {
           if (isActive) {
             return (
               <Button key={tab.href} asChild>
-                <Link href={tab.href}>{tab.label}</Link>
+                <Link href={tab.href}>
+                  <div className="w-full flex justify-sart gap-4 items-center">
+                    {tab.icon}
+                    <p>{tab.label}</p>
+                  </div>
+                </Link>
               </Button>
             );
           }
           return (
             <Button key={tab.href} asChild variant="secondary">
-              <Link href={tab.href}>{tab.label}</Link>
+              <Link href={tab.href}>
+                <div className="w-full flex justify-sart gap-4 items-center">
+                  {tab.icon}
+                  <p>{tab.label}</p>
+                </div>
+              </Link>
             </Button>
           );
         })}
       </div>
       <Button variant="destructive" onClick={logout}>
-        Log out
+        <div className="w-full flex justify-sart gap-4 items-center">
+          <LogOut size={20} />
+          Log out
+        </div>
       </Button>
     </nav>
   );
