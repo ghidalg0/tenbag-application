@@ -1,0 +1,9 @@
+{
+  "Navbar": {
+    "dashboard": "Dashboard",
+    "investments": "Investments",
+    "screeners": "Screeners",
+    "forum": "Forum",
+    "logout": "Logout"
+  }
+}
