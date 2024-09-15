@@ -47,13 +47,11 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="pt-8 h-screen border-e-2 w-[240px] fixed top-0 px-4 pb-4 flex flex-col justify-between">
+    <nav className=" z-20 bg-background pt-8 h-screen border-e-2 w-[240px] fixed top-0 px-4 pb-4 flex flex-col justify-between">
       <h1 className="text-center font-black text-4xl">10Bag</h1>
       <div className="grow space-y-2 flex flex-col pt-16">
         {tabs.map((tab) => {
           const isActive = tab.href === pathname.replace(/^\/[a-z]{2}/, "");
-
-          console.log(pathname.split("/"));
 
           if (isActive) {
             return (

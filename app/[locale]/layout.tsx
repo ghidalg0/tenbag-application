@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 export const metadata: Metadata = {
   title: "Tenbag App",
@@ -24,8 +25,15 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
-          <Toaster />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
