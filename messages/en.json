@@ -1,0 +1,18 @@
+{
+  "Navbar": {
+    "dashboard": "Dashboard",
+    "investments": "Investments",
+    "screeners": "Screeners",
+    "forum": "Forum",
+    "logout": "Logout"
+  },
+  "ModeToggle": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "LanguageToggle": {
+    "english": "English",
+    "french": "French"
+  }
+}

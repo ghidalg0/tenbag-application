@@ -1,0 +1,18 @@
+{
+  "Navbar": {
+    "dashboard": "Tableau de bord",
+    "investments": "Investissements",
+    "screeners": "Sélecteurs",
+    "forum": "Forum",
+    "logout": "Déconnexion"
+  },
+  "ModeToggle": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "LanguageToggle": {
+    "english": "Anglais",
+    "french": "Français"
+  }
+}
