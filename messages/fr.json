@@ -1,0 +1,9 @@
+{
+  "Navbar": {
+    "dashboard": "Tableau de bord",
+    "investments": "Investissements",
+    "screeners": "Sélecteurs",
+    "forum": "Forum",
+    "logout": "Déconnexion"
+  }
+}

@@ -82,7 +82,7 @@ export const Navbar = () => {
       <Button variant="destructive" onClick={logout}>
         <div className="w-full flex justify-sart gap-4 items-center">
           <LogOut size={20} />
-          Log out
+          {t("logout")}
         </div>
       </Button>
     </nav>
