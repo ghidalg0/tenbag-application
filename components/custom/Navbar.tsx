@@ -2,7 +2,7 @@
 
 import { deleteAuthCookie } from "@/actions/cookies";
 import { Button } from "../ui/button";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   ChartCandlestick,
   EyeIcon,

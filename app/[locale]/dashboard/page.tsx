@@ -1,7 +1,6 @@
 import { verifyPermission } from "@/actions/authenticatedPage";
 import { PageLayout } from "@/components/custom/PageLayout";
 import { PageTitle } from "@/components/custom/PageTitle";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 export default async function DashboardPage() {
