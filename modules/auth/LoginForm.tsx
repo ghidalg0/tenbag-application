@@ -32,7 +32,13 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 
-export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
+export const LoginForm = ({
+  loginUrl,
+  locale,
+}: {
+  loginUrl: string;
+  locale: string;
+}) => {
   const router = useRouter();
   const { toast } = useToast();
   const t = useTranslations("Login");
@@ -64,7 +70,7 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
     const data = await res.json();
     if (data.accessToken) {
       await createAuthCookie(data.accessToken);
-      router.push("/dashboard");
+      router.push(`/${locale}/dashboard`);
       return;
     }
     toast({
