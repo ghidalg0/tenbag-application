@@ -56,7 +56,7 @@ export default async function DashboardPage({
   return (
     <PageLayout>
       <PageTitle title="Your current portfolio" />
-      <Dashboard powensUrl={powensUrl} authToken={authToken} />
+      {authToken && <Dashboard powensUrl={powensUrl} authToken={authToken} />}
       {investmentsData?.investments?.length > 0 && (
         <div className="space-y-2 mt-8">
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
