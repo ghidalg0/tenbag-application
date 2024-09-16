@@ -14,5 +14,28 @@
   "LanguageToggle": {
     "english": "English",
     "french": "French"
+  },
+  "Settings": {
+    "subscription": {
+      "title": "Subscription",
+      "description":"Manage your subscription, payment methods and invoices",
+      "cta": "Manage"
+    }
+  },
+  "Dashboard": {
+    "title": "Welcome back {name}!"
+  },
+  "Login": {
+    "title": "Login",
+    "description": "Enter your credentials to access your account",
+    "labels": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "buttons": {
+      "login": "Login",
+      "forgot": "Forgot password?",
+      "signup": "Sign up"
+    }
   }
 }

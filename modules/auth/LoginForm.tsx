@@ -30,10 +30,12 @@ import { Input } from "@/components/ui/input";
 import { createAuthCookie } from "@/actions/cookies";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslations } from "next-intl";
 
 export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
   const router = useRouter();
   const { toast } = useToast();
+  const t = useTranslations("Login");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -74,8 +76,8 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
   return (
     <Card className="max-w-xs w-full">
       <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>Access your 10Bag Space</CardDescription>
+        <CardTitle>{t("title")}</CardTitle>
+        <CardDescription>{t("description")}</CardDescription>
       </CardHeader>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -85,7 +87,7 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t("labels.email")}</FormLabel>
                   <FormControl>
                     <Input placeholder="guilhem@tenbag.ai" {...field} />
                   </FormControl>
@@ -98,7 +100,7 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t("labels.password")}</FormLabel>
                   <FormControl>
                     <Input placeholder="••••••••" {...field} />
                   </FormControl>
@@ -109,7 +111,7 @@ export const LoginForm = ({ loginUrl }: { loginUrl: string }) => {
           </CardContent>
           <CardFooter>
             <Button type="submit" className="w-full">
-              Login
+              {t("buttons.login")}
             </Button>
           </CardFooter>
         </form>

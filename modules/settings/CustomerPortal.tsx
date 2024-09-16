@@ -6,9 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 export const CustomerPortal = ({ handlePortal }: { handlePortal: any }) => {
+  const t = useTranslations("Settings.subscription");
   const router = useRouter();
   const handle = async () => {
     const data = await handlePortal();
@@ -21,14 +23,12 @@ export const CustomerPortal = ({ handlePortal }: { handlePortal: any }) => {
     <Card>
       <CardHeader className="flex flex-row justify-between items-center">
         <div>
-          <CardTitle>Subscription</CardTitle>
-          <CardDescription>
-            Manage your subscription, payment methods and invoices
-          </CardDescription>
+          <CardTitle>{t("title")}</CardTitle>
+          <CardDescription>{t("description")}</CardDescription>
         </div>
 
         <Button variant="outline" size="sm" onClick={handle}>
-          Manage
+          {t("cta")}
         </Button>
       </CardHeader>
     </Card>

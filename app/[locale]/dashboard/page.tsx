@@ -1,9 +1,12 @@
 import { verifyPermission } from "@/actions/authenticatedPage";
 import { PageLayout } from "@/components/custom/PageLayout";
 import { PageTitle } from "@/components/custom/PageTitle";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export default async function DashboardPage() {
   const authToken = await verifyPermission();
+  const t = await getTranslations("Dashboard");
 
   const url = process.env.BACK_URL + "/users/current-user";
   const response = await fetch(url, {
@@ -16,7 +19,7 @@ export default async function DashboardPage() {
 
   return (
     <PageLayout>
-      <PageTitle title={`Welcome back ${user.username}`} />
+      <PageTitle title={t("title", { name: user.username })} />
     </PageLayout>
   );
 }

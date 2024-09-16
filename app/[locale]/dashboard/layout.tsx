@@ -8,7 +8,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex min-h-screen w-full">
-      <DashboardControls />
+      <DashboardControls settings />
       <Navbar />
       <main className="ps-[280px] pe-16 w-full">{children}</main>
     </div>

@@ -15,12 +15,10 @@ import { Link } from "@/i18n/routing";
 
 export const Navbar = () => {
   const t = useTranslations("Navbar");
-  const router = useRouter();
   const pathname = usePathname();
 
   const logout = async () => {
     await deleteAuthCookie();
-    router.push("/login");
   };
 
   const tabs = [
@@ -77,11 +75,14 @@ export const Navbar = () => {
           );
         })}
       </div>
-      <Button variant="destructive" onClick={logout}>
-        <div className="w-full flex justify-sart gap-4 items-center">
+      <Button variant="destructive" onClick={logout} asChild>
+        <Link
+          href="/login"
+          className="w-full flex justify-sart gap-4 items-center"
+        >
           <LogOut size={20} />
           {t("logout")}
-        </div>
+        </Link>
       </Button>
     </nav>
   );

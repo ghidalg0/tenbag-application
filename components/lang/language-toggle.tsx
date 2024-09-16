@@ -17,7 +17,7 @@ export default function LanguageToggle() {
   const t = useTranslations("LanguageToggle");
 
   const handleChange = (language: string) => {
-    router.push("/" + language + pathname.replace(/^\/[a-z]{2}/, ""));
+    router.replace("/" + language + pathname.replace(/^\/[a-z]{2}/, ""));
   };
 
   return (

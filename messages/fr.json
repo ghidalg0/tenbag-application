@@ -14,5 +14,29 @@
   "LanguageToggle": {
     "english": "Anglais",
     "french": "Français"
+  },
+  "Settings": {
+    "subscription": {
+      "title": "Abonnement",
+      "description": "Gérez votre abonnement, vos méthodes de paiement et vos factures",
+      "cta": "Gérer"
+    }
+  },
+  "Dashboard": {
+    "title": "Bon retour sur votre espace {name} !"
+  },
+  "Login": {
+    "title": "Connexion",
+    "description": "Entrez vos identifiants pour accéder à votre compte",
+    "labels": {
+      "email": "Email",
+      "password": "Mot de passe"
+    },
+    "buttons": {
+      "login": "Connexion",
+      "forgot": "Mot de passe oublié ?",
+      "signup": "S'inscrire"
+    }
   }
+
 }
